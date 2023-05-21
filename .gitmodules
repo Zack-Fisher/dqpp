@@ -1,0 +1,12 @@
+[submodule "backends/c_logic"]
+	path = backends/c_logic
+	url = https://github.com/Zack-Fisher/dqpp_c_backend.git
+[submodule "backends/flask_reverse_proxy"]
+	path = backends/flask_reverse_proxy
+	url = https://github.com/Zack-Fisher/dqpp_flask_backend.git
+[submodule "backends/rails_backend"]
+	path = backends/rails_backend
+	url = https://github.com/Zack-Fisher/dqpp_rails_backend.git
+[submodule "backends/laravel_backend"]
+	path = backends/laravel_backend
+	url = https://github.com/Zack-Fisher/dqpp_laravel_backend.git
