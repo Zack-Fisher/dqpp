@@ -1,0 +1,50 @@
+version: "3.9"
+services:
+
+  # just some loose bundle files that can be shared across backends.
+  express_backend_bundle_host_service:
+    build:
+      context: ./backends/node_jsbundle_host_backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./ports.env
+
+  # the core of the game, should be loaded before the other proper backends.
+  c_backend_service:
+    build:
+      context: ./backends/c_logic
+      dockerfile: Dockerfile
+    env_file:
+      - ./ports.env
+  
+  ## the go milvus server is two services, one for the vector db and one for go
+  # the milvus docker compose is started in the run.sh script
+  go_milvus_backend_service:
+    build:
+      context: ./backends/go_milvus_backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./ports.env
+
+  laravel_backend_service:
+    build:
+      context: ./backends/laravel_backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./ports.env
+
+  rails_backend_service:
+    build:
+      context: ./backends/rails_backend
+      dockerfile: Dockerfile
+    env_file:
+      - ./ports.env
+
+  # should be loaded last, the flask backend is a reverse proxy that will
+  # forward requests to the other backends and marshall them.
+  flask_backend_service:
+    build:
+      context: ./backends/flask_reverse_proxy
+      dockerfile: Dockerfile
+    env_file:
+      - ./ports.env

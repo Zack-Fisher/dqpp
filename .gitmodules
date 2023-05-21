@@ -10,3 +10,9 @@
 [submodule "backends/laravel_backend"]
 	path = backends/laravel_backend
 	url = https://github.com/Zack-Fisher/dqpp_laravel_backend.git
+[submodule "backends/node_jsbundle_host_backend"]
+	path = backends/node_jsbundle_host_backend
+	url = https://github.com/Zack-Fisher/dqpp_jsbundle_host_backend.git
+[submodule "backends/go_milvus_backend"]
+	path = backends/go_milvus_backend
+	url = https://github.com/Zack-Fisher/dqpp_milvus_go_backend.git
